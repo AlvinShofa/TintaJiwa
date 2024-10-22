@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tinta Jiwa</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    /* Center the "Order Now!!!" title */
+.order-form-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Alternating service layout */
+.service-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 40px auto;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.service-container:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Service image styling */
+.service-image img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.service-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-container {
+    flex-direction: column;
+  }
+
+  .service-container:nth-child(even) {
+    flex-direction: column;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="./image/logo.jpg" alt="Tinta Jiwa Logo">
+        <h1>Tinta Jiwa</h1>
+      </div>
+      <!-- Add hamburger button -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="nav-links">
+        <li><a href="./page/page2.html">About Us</a></li>
+        <li><a href="#about">Our Service</a></li>
+        <li><a href="#order">Order</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+
+  <section class="hero">
+    <h2>Tinta Jiwa</h2>
+    <p>Menjadi penyedia jasa konten yang terpercaya dan inovatif, serta membantu bisnis berkembang melalui konten yang kreatif.</p>
+    <a href="./page/page2.html" class="btn">About us</a><br>
+    <!-- Add an image below the button -->
+    <img src="./image/image-4.png" alt="Hero Image" class="hero-image">
+  </section>
+  
+
+  <!-- Our Services Section -->
+  <section class="services" id="about">
+    <h2>Our Services</h2>
+
+    <div class="service-container">
+      <div class="service">
+        <h3>Shopee Reels</h3>
+        <ul>
+          <li>Menyedikan konten video singkat yang menarik untuk Shopee.</li>
+          <li>Meningkatkan interaksi dengan pelanggan.</li>
+          <li>Optimalkan penjualan dengan fitur promosi dan diskon.</li>
+        </ul>
+      </div> 
+      <div class="service-image">
+        <img src="./image/tat-tan-tat-ve-shopee-live.jpg" alt="Shopee Live Service">
+      </div>
+    </div>
+
+    <div class="service-container">
+      <div class="service">
+        <h3>TikTok</h3>
+        <ul>
+          <li>Menyediakan konten video kreatif yang viral di TikTok.</li>
+          <li>Kolaborasi dengan influencer untuk meningkatkan engagement.</li>
+          <li>Membangun komunitas yang aktif dan terlibat melalui video singkat.</li>
+        </ul>
+      </div>
+      <div class="service-image">
+        <img src="./image/6520397f20809f89a14dbb53_tiktok-video.jpeg" alt="TikTok Service">
+      </div>
+    </div>
+
+    <div class="service-container">
+      <div class="service">
+        <h3>Reels/Feeds Instagram</h3>
+        <ul>
+          <li>Kolaborasi dengan arsitek dan content creator.</li>
+          <li>Pamerkan proyek Anda dengan visual yang menarik.</li>
+          <li>Rasakan pengalaman dunia arsitektur melalui Instagram.</li>
+        </ul>
+      </div>
+      <div class="service-image">
+        <img src="./image/Instagram Reels.webp" alt="Instagram Service">
+      </div>
+    </div>
+
+  </section>
+
+  <section class="order-form-section" id="order">
+    <h2 class="center">Order Now!!!</h2>
+    <form id="orderForm" onsubmit="submitForm(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+  
+      <label for="platform">Platform:</label>
+      <select id="platform" name="platform" required>
+        <option value="Instagram">Instagram</option>
+        <option value="TikTok">TikTok</option>
+        <option value="Shopee Reels">Shopee Reels</option>
+      </select>
+  
+      <label for="Account">Account Name:</label>
+      <input type="text" id="account" name="account" required>
+  
+      <label for="Date">Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="Reference">Reference (optional):</label>
+      <input type="text" id="reference" name="Reference" required>
+  
+      <label for="Duration">Duration (Second):</label>
+      <input type="number" id="duration" name="duration" min="5" required>
+  
+      <label for="Message">Message:</label>
+      <textarea id="message" name="message" rows="4" required placeholder="Masukkan Tema dan Tujuan Konten Anda"></textarea>
+  
+      <button type="Submit" class="btn">Submit</button>
+    </form>
+  </section>
+    
+
+  <footer>
+    <p class="center">© 2024 Tinta Jiwa. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
