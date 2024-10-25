@@ -24,3 +24,20 @@ function toggleMenu() {
   const navLinks = document.getElementById('nav-links');
   navLinks.classList.toggle('show');
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const dateInput = document.getElementById("date");
+
+  // Mendapatkan tanggal saat ini
+  const today = new Date();
+
+  // Menghitung tanggal minimal (3 hari dari sekarang)
+  const minDate = new Date(today);
+  minDate.setDate(today.getDate() + 3);
+
+  // Mengonversi tanggal ke format yang sesuai untuk input type="date"
+  const minDateString = minDate.toISOString().split("T")[0];
+
+  // Mengatur atribut min pada input tanggal
+  dateInput.min = minDateString;
+});
